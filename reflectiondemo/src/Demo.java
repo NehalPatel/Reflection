@@ -3,8 +3,8 @@ import java.lang.reflect.Method;
 
 public class Demo {
     public static void main(String args[]){
-        Person p = new Person("John");
-        Person p2 = new Person("Adam");
+        Person p = new Person("Nehal");
+        Person p2 = new Person("Devashya");
 
         try {
             //Access Private field

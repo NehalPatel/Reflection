@@ -1,7 +1,7 @@
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-public class War {
+public class War2 {
     public static void main(String args[]){
         Warship ship = new Warship("Ship1");
         ship.makeWar("Earth");
