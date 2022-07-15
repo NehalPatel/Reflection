@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 public class War2 {
     public static void main(String args[]){
         Warship ship = new Warship("Ship1");
-        ship.makeWar("Earth");
+        ship.makeWar("China");
 
         try {
             //Access Private field
