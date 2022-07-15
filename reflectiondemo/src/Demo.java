@@ -1,5 +1,7 @@
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 
 public class Demo {
     public static void main(String args[]){
@@ -7,6 +9,27 @@ public class Demo {
         Person p2 = new Person("Devashya");
 
         try {
+            //get all fields of Person class
+            Field[] fields = p.getClass().getDeclaredFields();
+            for(Field field : fields){
+                System.out.println(Modifier.toString(field.getModifiers()) + ' ' +field.getName());
+            }
+            System.out.println("=========================");
+
+            //get all methods of Person and Parents class
+            Method[] methods = p.getClass().getDeclaredMethods();
+            for(Method method : methods){
+                System.out.println(Modifier.toString(method.getModifiers()) + ' ' +method.getName());
+            }
+            System.out.println("=========================");
+
+            //get all Constructors of Person class
+            Constructor[] constructors = p.getClass().getDeclaredConstructors();
+            for(Constructor constructor : constructors){
+                System.out.println(constructor.getName());
+            }
+            System.out.println("=========================");
+
             //Access Private field
             Field f = p.getClass().getDeclaredField("name");
             f.setAccessible(true);
@@ -41,6 +64,7 @@ public class Demo {
 
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
+            e.printStackTrace();
         }
 
     }
